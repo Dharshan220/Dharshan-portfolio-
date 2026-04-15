@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dharshan - IoT & AI Enthusiast | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(15, 12, 41, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(102, 51, 153, 0.3);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #b19cd9;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+            background: rgba(102, 51, 153, 0.2);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(102, 51, 153, 0.2), rgba(75, 0, 130, 0.2));
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(102, 51, 153, 0.3);
+            animation: slideInDown 0.8s ease;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffd700, #ffed4e, #b19cd9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeIn 1s ease;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+            color: #b19cd9;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .hero p {
+            color: #d0d0d0;
+            font-size: 1rem;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(48, 43, 99, 0.3);
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+            animation: slideInUp 0.8s ease;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #ffd700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .icon {
+            font-size: 1.8rem;
+        }
+
+        /* About Section */
+        .about-content {
+            color: #d0d0d0;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            margin-bottom: 1rem;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-category h3 {
+            color: #b19cd9;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.5rem 0;
+            color: #d0d0d0;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .skill-list li:before {
+            content: "▹";
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Projects */
+        .projects-container {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-card {
+            background: rgba(75, 0, 130, 0.2);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(102, 51, 153, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .project-card h3 {
+            color: #ffd700;
+            margin-bottom: 0.7rem;
+            font-size: 1.3rem;
+        }
+
+        .project-card p {
+            color: #d0d0d0;
+            margin-bottom: 0.8rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .tech-tag {
+            background: rgba(102, 51, 153, 0.4);
+            color: #b19cd9;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(102, 51, 153, 0.6);
+        }
+
+        /* Achievements */
+        .achievements-list {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .achievement-item {
+            padding: 1rem;
+            background: rgba(255, 215, 0, 0.05);
+            border-left: 3px solid #ffd700;
+            border-radius: 5px;
+            color: #d0d0d0;
+        }
+
+        .achievement-item:before {
+            content: "🏆 ";
+            margin-right: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-card {
+            background: rgba(102, 51, 153, 0.2);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(102, 51, 153, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            border-color: #ffd700;
+            transform: scale(1.05);
+        }
+
+        .contact-card h3 {
+            color: #ffd700;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-card a {
+            color: #b19cd9;
+            text-decoration: none;
+            word-break: break-all;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: #ffd700;
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #888;
+            border-top: 1px solid rgba(102, 51, 153, 0.3);
+            margin-top: 3rem;
+        }
+
+        /* Animations */
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home">🏠 Home</a>
+            <a href="#about">👨‍💻 About</a>
+            <a href="#skills">🛠 Skills</a>
+            <a href="#projects">📂 Projects</a>
+            <a href="#achievements">🎯 Achievements</a>
+            <a href="#contact">📞 Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <h1>Dharshan</h1>
+            <p class="subtitle">ECE Student | IoT & AI Enthusiast</p>
+            <p>"Building smart solutions using technology to solve real-world problems."</p>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2><span class="icon">👨‍💻</span> About Me</h2>
+            <div class="about-content">
+                <p>I am an Electronics and Communication Engineering student with a strong interest in Internet of Things (IoT), Embedded Systems, and Artificial Intelligence. I enjoy designing and developing practical solutions that can create real-world impact.</p>
+                <p>I am passionate about learning new technologies, working on innovative projects, and continuously improving my technical and problem-solving skills.</p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2><span class="icon">🛠</span> Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <ul class="skill-list">
+                        <li>C Programming</li>
+                        <li>Python (Basics)</li>
+                        <li>Arduino & IoT Development</li>
+                        <li>Embedded Systems</li>
+                        <li>VLSI (Basics)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <ul class="skill-list">
+                        <li>Arduino IDE</li>
+                        <li>VS Code</li>
+                        <li>Git & GitHub</li>
+                        <li>AI Tools (Cursor, Claude, etc.)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2><span class="icon">📂</span> Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>🔹 IoT Smart Delivery & Safety Bot</h3>
+                    <p>Developed a smart bot designed for delivering essential items like food and clothes within apartments. The bot is equipped with sensors to detect gas leaks and fire hazards, ensuring safety during operation.</p>
+                    <p><strong>Co-founder of NANO SPARK:</strong> Apartment-based delivery services startup</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">IoT</span>
+                        <span class="tech-tag">Sensors</span>
+                        <span class="tech-tag">Robotics</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>🔹 Fire & Gas Detection System</h3>
+                    <p>Designed a system that detects fire and gas leakage and alerts users in real time to prevent accidents.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">Gas Sensor</span>
+                        <span class="tech-tag">Temperature Sensor</span>
+                        <span class="tech-tag">IoT</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements">
+            <h2><span class="icon">🎯</span> Career Objective & Achievements</h2>
+            <div class="about-content">
+                <p><strong>Career Objective:</strong> To build a career in the field of Embedded Systems and IoT, where I can apply my knowledge, enhance my skills, and contribute to innovative technological solutions.</p>
+            </div>
+            <div class="achievements-list">
+                <div class="achievement-item">Finalist in Smart India Hackathon 2025</div>
+                <div class="achievement-item">Completed courses in IoT & Embedded Systems</div>
+                <div class="achievement-item">Active learner and project builder</div>
+                <div class="achievement-item">Co-founder of NANO SPARK startup</div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2><span class="icon">📞</span> Contact</h2>
+            <div class="contact-links">
+                <div class="contact-card">
+                    <h3>📧 Email</h3>
+                    <a href="mailto:dharshane21@gmail.com">dharshane21@gmail.com</a>
+                </div>
+                <div class="contact-card">
+                    <h3>🔗 LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/dharshan-e-694a82329" target="_blank">View Profile</a>
+                </div>
+                <div class="contact-card">
+                    <h3>💻 GitHub</h3>
+                    <a href="https://github.com/Dharshan220" target="_blank">Dharshan220</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Dharshan | IoT & AI Enthusiast | Built with passion for innovation</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add scroll animation effect
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
